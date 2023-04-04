@@ -2,15 +2,15 @@
 
 ![A graph of a state space](header.svg)
 
-This is a showcase of using tools to analyse the state graph of a TLA+ specification. 
+This is a showcase of using tools to analyse the state graph of a [TLA+](https://learntla.com/) specification. 
 
 The specification models a set of threads nonatomically incrementing a shared counter `x`. The TLA+ model checker can natively check that the end value of `x` is always a specific number or in a specific range, but it can't natively determine how likely you are to end up with each value in that range. To check that, we demonstrate extracting the full state space to a directed graph, then run a program (`likelihood.py`) to calculate the probabilities for us.
 
 Notes on the program are in `notes.md`. There are also three other extras:
 
 1. `clean_graph.py` utility to rename the nodes of a state graph
-2. A [gephi]() model of one state space, if you want to do any visualizations
-3. A [PRISM]() probabilistic model of the same system.
+2. A [gephi](https://gephi.org/) model of one state space, if you want to do any visualizations
+3. A [PRISM](https://www.prismmodelchecker.org/) probabilistic model of the same system.
 
 Information on them can be found in their corresponding folders.
 
