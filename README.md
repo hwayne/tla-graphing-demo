@@ -1,6 +1,6 @@
 # tla-graphing-demo
 
-![img](img)
+![A graph of a state space](header.svg)
 
 This is a showcase of using tools to analyse the state graph of a TLA+ specification. 
 
@@ -12,8 +12,7 @@ Notes on the program are in `notes.md`. There are also three other extras:
 2. A [gephi]() model of one state space, if you want to do any visualizations
 3. A [PRISM]() probabilistic model of the same system.
 
-They're discussed in their corresponding folders.
-
+Information on them can be found in their corresponding folders.
 
 # Use
 
