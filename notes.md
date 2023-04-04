@@ -23,8 +23,7 @@ NetworkX docs: https://networkx.org/documentation/stable/reference/introduction.
 * [predecessors](https://networkx.org/documentation/stable/reference/classes/generated/networkx.DiGraph.predecessors.html#networkx.DiGraph.predecessors)
 * [set_node_attributes](https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.set_node_attributes.html#set-node-attributes)
 
-</summary>
-
+</details>
 
 ### l:read\_dot (7)
 
