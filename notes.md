@@ -6,7 +6,7 @@ Todo.
 
 ### l:nx\_reference
 
-NetworkX docs: https://networkx.org/documentation/stable/reference/introduction.html
+[NetworkX](https://networkx.org/documentation/stable/reference/introduction.html) is a graph analysis library for Python. The graph is represented by a dict of dict of dicts: `G[n]` generates all nodes reachable from `n`, `G[n][p]` is the edge between `n` and `p`, and the edge itself is a dictionary of the edge's attributes. You get attributes of the node itself with `G.nodes[n]`.
 
 <details><summary>Used methods</summary>
 

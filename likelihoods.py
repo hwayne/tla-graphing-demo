@@ -1,3 +1,5 @@
+"""Anything with l:string has a longer explanation in notes.md."""
+
 import networkx as nx # l:nx_reference
 import re
 from argparse import ArgumentParser
@@ -14,9 +16,9 @@ def make_graph(path) -> nx.DiGraph:
     return G
 
 def weight_edges(G: nx.DiGraph, inc_weight=1.0): # l:weight_edges
-    """Assigns a probability weight to the every outbound edge of a node.
+    """Assigns a probability weight to the every outbound edge of a node. 
 
-    :param float inc_weight: relative weight of increment transitions normalized to a `get` transition"""
+    inc_weight is relative weight of increment transitions normalized to a `get` transition."""
 
     for n in G:
         total = 0
