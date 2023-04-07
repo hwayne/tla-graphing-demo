@@ -1,4 +1,8 @@
 const int final;
 
+// Probability x ends at `final`, which we choose on verify
 S=? [ x=final ]
+
+// The probability x ends at 4, given x is already 3
+P=? [(G F x=4)] / P=? [(F x = 3)]
 

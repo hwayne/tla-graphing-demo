@@ -1,6 +1,6 @@
 dtmc
-
-global x : [0..4]; //update for number of threads
+formula NumThreads = 4; //update for number of threads
+global x : [0..NumThreads]; 
 const int inc_weight; 
 
 formula p_inc = inc_weight/(1 + inc_weight);
@@ -8,14 +8,16 @@ formula p_get = 1/(1 + inc_weight);
 const int GET = 1; const int INC = 2; const int DONE = 3;
 
 module thread1
-     tmp1 : [0..4] init 0;
+     tmp1 : [0..NumThreads] init 0;
      state1: [GET..DONE] init GET;
 
-     [] state1=GET -> p_get : (tmp1' = x) & (state1' = INC) + p_inc: true;
-     [] (state1=INC) & (tmp1 < 4) -> p_get : true + p_inc: (x' = tmp1+1) & (state1' = DONE);
+     [] state1=GET -> p_get: (tmp1' = x) & (state1' = INC) 
+                    + p_inc: true;
+     [] (state1=INC) & (tmp1 < NumThreads) -> p_get : true 
+                                            + p_inc: (x' = tmp1+1) & (state1' = DONE);
      [] state1=DONE -> true;
 endmodule
 
 module thread2 = thread1[tmp1=tmp2, state1=state2] endmodule
 module thread3 = thread1[tmp1=tmp3, state1=state3] endmodule
-module thread4 = thread1[tmp1=tmp4, state1=state4] endmodule
+module thread4 = thread1[tmp1=tmp4, state1=state4] endmodule // if you change NumThreads, add/remove modules

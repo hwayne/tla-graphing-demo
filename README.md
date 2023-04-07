@@ -20,15 +20,21 @@ Information on them can be found in their corresponding folders.
 
 This is only necessary if you want to try modifying the spec or analyzing a state space with more than 5 threads.
 
-1. Install the TLA+ tools (TODO)
-2. Adjust the number of threads you want to model check in `threads.cfg`.
-2. Run
+1\. Install the [TLA+ tools](https://github.com/tlaplus/tlaplus)
+2\. Adjust the number of threads you want to model check in `threads.cfg`.
+3\. Run
 
 ```bash
 java -jar tlatools.jar threads.tla -dump dot,actionlabels {outfile.dot}
 ```
 
-This outputs a [graphviz]() file of the whole state space.
+This outputs a [graphviz](https://graphviz.org/) file of the whole state space.
+
+**NOTE:** If you modify the *PlusCal* portion of the spec (everything in the `--algorithm` block), you will have to recompile it to TLA+:
+
+```bash
+java -cp tla2tools.jar pcal.trans threads.tla
+```
 
 ## Analyzing the state space
 
@@ -44,4 +50,4 @@ python -m pip install -R requirements.txt
 
 2\. `python likelihoods.py graph.dot`
 
-`likelihoods.py` also has the flag `-m` for changing probabilistic weights
+`likelihoods.py` also has the flag `-m` for changing probabilistic weights.
